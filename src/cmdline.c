@@ -344,7 +344,7 @@ void cmdlineProcessInputString(void)
 	// search command list for match with entered command
 	for(cmdIndex=0; cmdIndex<CmdlineNumCommands; cmdIndex++)
 	{
-		if ( strlen( CmdlineCommandList[cmdIndex] == i ) )
+		if ( strlen( CmdlineCommandList[cmdIndex] ) == i )
 		{
 			if( !strncmp(CmdlineCommandList[cmdIndex], CmdlineBuffer, i) )
 			{
