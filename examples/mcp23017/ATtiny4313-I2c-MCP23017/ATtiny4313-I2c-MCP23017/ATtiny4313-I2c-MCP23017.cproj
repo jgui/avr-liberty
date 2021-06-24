@@ -14,7 +14,8 @@
     <AssemblyName>ATtiny4313-I2c-MCP23017</AssemblyName>
     <Name>ATtiny4313-I2c-MCP23017</Name>
     <RootNamespace>ATtiny4313-I2c-MCP23017</RootNamespace>
-    <avrtool>com.atmel.avrdbg.tool.simulator</avrtool>
+    <avrtool>
+    </avrtool>
     <com_atmel_avrdbg_tool_simulator>
       <ToolType xmlns="">com.atmel.avrdbg.tool.simulator</ToolType>
       <ToolName xmlns="">AVR Simulator</ToolName>
@@ -43,15 +44,15 @@
     <EraseKey />
     <AsfFrameworkConfig>
       <framework-data xmlns="">
-  <options />
-  <configurations />
-  <files />
-  <documentation help="" />
-  <offline-documentation help="" />
-  <dependencies>
-    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.49.1" />
-  </dependencies>
-</framework-data>
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.49.1" />
+        </dependencies>
+      </framework-data>
     </AsfFrameworkConfig>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -105,9 +106,7 @@
   <avrgcc.compiler.directories.IncludePaths>
     <ListValues>
       <Value>..</Value>
-      <Value>C:\Documents and Settings\Owner\My Documents\AVR\lib\avrlib</Value>
-      <Value>%24(PackRepoDir)\atmel\ATtiny_DFP\1.8.332\include\</Value>
-      <Value>C:\JDal\Projects\TestBoards\RelayCAN-Arduino-24\avr-liberty\src</Value>
+      <Value>../../../../../src</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
@@ -122,7 +121,8 @@
   </avrgcc.linker.libraries.Libraries>
   <avrgcc.assembler.general.IncludePaths>
     <ListValues>
-      <Value>%24(PackRepoDir)\atmel\ATtiny_DFP\1.8.332\include\</Value>
+      <Value>..</Value>
+      <Value>../../../../../src</Value>
     </ListValues>
   </avrgcc.assembler.general.IncludePaths>
   <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
@@ -130,22 +130,21 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\..\..\..\src\i2cmaster\i2cmaster.S">
+      <SubType>compile</SubType>
+      <Link>i2cmaster.S</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\src\mcp23017.c">
+      <SubType>compile</SubType>
+      <Link>mcp23017.c</Link>
+    </Compile>
     <Compile Include="ATtiny4313-I2c-MCP23017.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="global.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="i2cmaster.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="i2cmaster.S">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="mcp23017.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="mcp23017.h">
+    <Compile Include="i2cmasterconf.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>

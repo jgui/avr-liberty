@@ -9,7 +9,7 @@
 #include <util/delay.h>
 #include <avr/io.h>
 #include <mcp23017.h>
-#include "i2cmaster.h"
+#include "i2cmaster/i2cmaster.h"
 
 MCP23017 device;
 u08 data;

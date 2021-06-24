@@ -6,7 +6,7 @@
  */ 
 
 #include "mcp23017.h"
-#include "i2cmaster.h"
+#include "i2cmaster/i2cmaster.h"
 #include <util/delay.h>
 
 #define MCP23017_BASE_ADDRESS 0x40
